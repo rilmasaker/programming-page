@@ -3,12 +3,11 @@ import Container from "@mui/material/Container";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 import Link from "../src/Link";
-import NavBar from "../src/AppBar";
 
 export default function Index() {
   return (
     <>
-      <NavBar>
+     
         {[...new Array(42)]
           .map(
             () => `Cras mattis consectetur purus sit amet fermentum.
@@ -27,7 +26,6 @@ Praesent commodo cursus magna, vel scelerisque nisl consectetur et.`
             </Link>
           </Box>
         </Container>
-      </NavBar>
     </>
   );
 }
