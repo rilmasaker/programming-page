@@ -14,6 +14,12 @@ import SchoolIcon from "@mui/icons-material/School";
 import LocalMallIcon from "@mui/icons-material/LocalMall";
 import ChatBubbleOutlineIcon from "@mui/icons-material/ChatBubbleOutline";
 import VoiceChatIcon from "@mui/icons-material/VoiceChat";
+import IconButton from "@mui/material/IconButton";
+import Typography from "@mui/material/Typography";
+import Menu from "@mui/material/Menu";
+import MenuIcon from "@mui/icons-material/Menu";
+import MenuItem from "@mui/material/MenuItem";
+import ListItemIcon from "@mui/material/ListItemIcon";
 
 import Image from "next/image";
 
@@ -67,6 +73,16 @@ const ScrollTop = () => {
 };
 
 const NavBar = ({ children }) => {
+  const [anchorElNav, setAnchorElNav] = React.useState(null);
+
+  const handleOpenNavMenu = (event) => {
+    setAnchorElNav(event.currentTarget);
+  };
+
+  const handleCloseNavMenu = () => {
+    setAnchorElNav(null);
+  };
+
   return (
     <React.Fragment>
       <CssBaseline />
@@ -77,7 +93,12 @@ const NavBar = ({ children }) => {
           float: "right",
         }}
       >
-        <Toolbar variant="dense" sx={{ justifyContent: "space-between" }}>
+        <Toolbar
+          variant="dense"
+          sx={{
+            justifyContent: "space-between",
+          }}
+        >
           <Image
             // loader={myLoader}
             src="/logo.png"
@@ -85,14 +106,73 @@ const NavBar = ({ children }) => {
             width={150}
             height={35}
           />
-          <Box>
+
+          <Box
+            sx={{
+              display: { xs: "none", sm: "flex" },
+            }}
+          >
             {menuItems.map(({ text, endIcon }) => (
-              <Link key={text} href={`/${text.toLocaleLowerCase()}`}>
+              <Link
+                key={text}
+                href={text === "Home" ? "/" : `/${text.toLocaleLowerCase()}`}
+              >
                 <Button color="info" endIcon={endIcon} sx={{ margin: "10px" }}>
                   {text}
                 </Button>
               </Link>
             ))}
+          </Box>
+
+          <Box sx={{ display: { xs: "flex", sm: "none" } }}>
+            <IconButton
+              size="large"
+              aria-label="account of current user"
+              aria-controls="menu-appbar"
+              aria-haspopup="true"
+              onClick={handleOpenNavMenu}
+              color="inherit"
+            >
+              <MenuIcon />
+            </IconButton>
+            <Menu
+              id="menu-appbar"
+              anchorEl={anchorElNav}
+              anchorOrigin={{
+                vertical: "bottom",
+                horizontal: "left",
+              }}
+              keepMounted
+              transformOrigin={{
+                vertical: "top",
+                horizontal: "left",
+              }}
+              open={Boolean(anchorElNav)}
+              onClose={handleCloseNavMenu}
+              sx={{
+                display: { xs: "flex", sm: "none" },
+              }}
+            >
+              {menuItems.map(({ text, endIcon }) => (
+                <Link
+                  key={text}
+                  href={text === "Home" ? "/" : `/${text.toLocaleLowerCase()}`}
+                >
+                  <MenuItem
+                    key={text}
+                    onClick={handleCloseNavMenu}
+                    sx={{
+                      background:
+                        "linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,32,121,1) 71%, rgba(0,212,255,1) 100%)",
+                        color:"info.main"
+                    }}
+                  >
+                    <ListItemIcon sx={{color:"info.main"}}>{endIcon}</ListItemIcon>
+                    <Typography textAlign="center">{text}</Typography>
+                  </MenuItem>
+                </Link>
+              ))}
+            </Menu>
           </Box>
         </Toolbar>
       </AppBar>
