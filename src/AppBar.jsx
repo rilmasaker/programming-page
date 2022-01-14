@@ -94,7 +94,7 @@ const NavBar = ({ children }) => {
         }}
       >
         <Toolbar
-          variant="dense"
+          // variant="dense"
           sx={{
             justifyContent: "space-between",
           }}
@@ -164,10 +164,12 @@ const NavBar = ({ children }) => {
                     sx={{
                       background:
                         "linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,32,121,1) 71%, rgba(0,212,255,1) 100%)",
-                        color:"info.main"
+                      color: "info.main",
                     }}
                   >
-                    <ListItemIcon sx={{color:"info.main"}}>{endIcon}</ListItemIcon>
+                    <ListItemIcon sx={{ color: "info.main" }}>
+                      {endIcon}
+                    </ListItemIcon>
                     <Typography textAlign="center">{text}</Typography>
                   </MenuItem>
                 </Link>
@@ -177,7 +179,7 @@ const NavBar = ({ children }) => {
         </Toolbar>
       </AppBar>
       <Toolbar id="back-to-top-anchor" />
-      <Container>{children}</Container>
+      <Box>{children}</Box>
       <ScrollTop />
     </React.Fragment>
   );
