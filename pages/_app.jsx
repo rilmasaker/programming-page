@@ -8,7 +8,8 @@ import theme from "../src/theme";
 import createEmotionCache from "../src/createEmotionCache";
 import NavBar from "../src/AppBar";
 
-import "./styles.css";
+import "./styles.scss";
+import "./stars.scss";
 
 // Client-side cache, shared for the whole session of the user in the browser.
 const clientSideEmotionCache = createEmotionCache();
@@ -21,13 +22,13 @@ export default function MyApp(props) {
       <Head>
         <meta name="viewport" content="initial-scale=1, width=device-width" />
       </Head>
-      <ThemeProvider theme={theme}>
+      {/* <ThemeProvider theme={theme}> */}
         {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
-        <CssBaseline />
-        <NavBar>
+        {/* <CssBaseline /> */}
+        {/* <NavBar> */}
           <Component {...pageProps} />
-        </NavBar>
-      </ThemeProvider>
+        {/* </NavBar> */}
+      {/* </ThemeProvider> */}
     </CacheProvider>
   );
 }
