@@ -3,38 +3,37 @@ import SupervisedUserCircleIcon from "@mui/icons-material/SupervisedUserCircle";
 import ModelTrainingIcon from "@mui/icons-material/ModelTraining";
 import MeetingRoomIcon from "@mui/icons-material/MeetingRoom";
 
+import Link from "next/link";
+
 import Background from "./Background";
 
-const SideBar = () => {
+const links = [
+  { link: "/", icon: ModelTrainingIcon },
+  { link: "/tech", icon: CastForEducationIcon },
+  { link: "/meet", icon: MeetingRoomIcon },
+  { link: "/about", icon: SupervisedUserCircleIcon },
+];
+
+const SideBar = ({ children }) => {
   return (
     <>
       <div className="nav-container">
         <div className="grid">
           <nav>
             <ul>
-              <li>
-                <div >
-                  <ModelTrainingIcon fontSize="large" />
-                </div>
-              </li>
-              <li>
-                <div >
-                  <CastForEducationIcon fontSize="large" />
-                </div>
-              </li>
-              <li>
-                <div >
-                  <MeetingRoomIcon fontSize="large" />
-                </div>
-              </li>
-              <li>
-                <div >
-                  <SupervisedUserCircleIcon fontSize="large" />
-                </div>
-              </li>
+              {links.map(({ link, icon: Icon }) => (
+                <Link href={link} key={link}>
+                  <li>
+                    <div>
+                      <Icon fontSize="large" />
+                    </div>
+                  </li>
+                </Link>
+              ))}
             </ul>
           </nav>
-          <div className="flex"> <p>SUPER TEXT</p></div>
+
+          <div className="flex"> {children}</div>
         </div>
       </div>
       <Background />
