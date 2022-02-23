@@ -20,19 +20,15 @@ const pageVariants = {
 
 const pageTransition = {
   type: "spring",
-  damping: 11,
+  damping: 21,
   ease: "anticipate",
   duration: 2.5,
 };
 
-const pageStyle = {
-  position: "absolute",
-};
-
-const MotionHoc = (Component) => {
+const MotionHoc = (Component, className) => {
   const AnimatedComponent = () => (
     <motion.div
-      style={pageStyle}
+      className={`motion ${className}`}
       initial="initial"
       animate="in"
       exit="out"

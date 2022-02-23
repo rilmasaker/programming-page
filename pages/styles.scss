@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@200&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@200&display=swap");
 .nav-container {
   display: flex;
   align-items: center;
@@ -56,13 +56,6 @@ nav ul li {
   transition: all 0.4s ease-out;
 }
 
-p {
-  background: -webkit-linear-gradient(white, #38495a);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  font-size: 50px;
-}
 
 nav ul li:after {
   position: absolute;
@@ -113,10 +106,44 @@ nav ul li > div {
 .shining-text {
   color: WHITE;
   text-align: center;
-  font-size: 50px;
+  font-size: 2em;
   font-weight: bold;
-  font-family: 'Saira Condensed', sans-serif;
+  font-family: "Saira Condensed", sans-serif;
   letter-spacing: 7px;
   cursor: pointer;
   text-shadow: 0 0 20px rgb(56, 78, 139), 0 0 20px #fff, 0 0 40px #fff;
+  letter-spacing: 1px;
+}
+.title {
+  font-size: 3em;
+}
+.m {
+  margin: 10px;
+}
+
+.motion {
+  position: "absolute";
+}
+
+.green {
+  color: chartreuse;
+  // text-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff, 0 0 42px #0fa,
+  //   0 0 82px green, 0 0 92px #0fa, 0 0 102px #0fa, 0 0 151px #0fa;
+}
+
+.time {
+  height: 94vh;
+}
+@media screen and (max-width: 625px) {
+  .tech {
+    height: 215vh;
+  }
+
+  .shining-text {
+    font-size: 1.5em;
+    letter-spacing: normal;
+  }
+  .title {
+    font-size: 2em;
+  }
 }

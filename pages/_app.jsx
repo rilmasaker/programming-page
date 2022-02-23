@@ -8,7 +8,7 @@ import { AnimatePresence, motion } from "framer-motion";
 
 import "./styles.scss";
 import "./stars.scss";
-
+import "./timeline.scss";
 import "./tech.scss";
 
 // Client-side cache, shared for the whole session of the user in the browser.

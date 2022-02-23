@@ -1,11 +1,8 @@
 import * as React from "react";
 import MotionHoc from "./MotionHOC";
 
-
-
 const Technologies = () => {
   return (
-
     <div className="container">
       <div className="card">
         <div className="face face1">
@@ -55,4 +52,4 @@ const Technologies = () => {
   );
 };
 
-export default MotionHoc(Technologies);
+export default MotionHoc(Technologies, "tech");
