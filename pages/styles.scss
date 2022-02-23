@@ -1,0 +1,149 @@
+@import url("https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@200&display=swap");
+.nav-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100vh;
+}
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 100fr;
+}
+.flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: auto;
+  height: 100vh;
+}
+
+body {
+  color: white;
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+  line-height: 1.4;
+  margin: 0;
+  min-height: 100vh;
+  background: radial-gradient(ellipse at bottom, #0d1d31 0%, #0c0d13 100%);
+  // overflow: hidden;
+}
+
+nav {
+  float: left;
+  position: relative;
+  top: 0;
+  left: 0;
+  background: transparent;
+  display: flex;
+  align-items: center;
+}
+
+nav ul {
+  text-align: center;
+  padding: 0;
+  -webkit-box-shadow: 9px 1px 20px 10px rgba(23, 23, 23, 0.37);
+  box-shadow: 9px 1px 20px 10px rgba(23, 23, 23, 0.37);
+}
+
+nav ul li {
+  position: relative;
+  width: 70px;
+  cursor: pointer;
+
+  background-color: #000000;
+  background-image: linear-gradient(147deg, #000000 0%, #2c3e50 74%);
+  text-transform: uppercase;
+  transition: all 0.4s ease-out;
+}
+
+
+nav ul li:after {
+  position: absolute;
+  background: white;
+  color: #2c3e50;
+  top: 0;
+  left: 70px;
+  width: 70px;
+  height: 100%;
+  opacity: 0.5;
+  transform: perspective(400px) rotateY(90deg);
+  transform-origin: 0 100%;
+  transition: all 0.4s ease-out;
+}
+
+nav ul li:nth-child(1):after {
+  content: "Idea";
+  line-height: 68px;
+}
+nav ul li:nth-child(2):after {
+  content: "Tech";
+  line-height: 68px;
+}
+nav ul li:nth-child(3):after {
+  content: "Meet";
+  line-height: 68px;
+}
+nav ul li:nth-child(4):after {
+  content: "About";
+  line-height: 68px;
+}
+
+nav ul li:hover {
+  transform: translateX(-70px);
+}
+
+nav ul li:hover:after {
+  opacity: 1;
+  transform: perspective(400px) rotateY(0deg) scale(1);
+}
+
+nav ul li > div {
+  display: inline-block;
+  padding: 10px 0;
+  background: transparent;
+}
+
+.shining-text {
+  color: WHITE;
+  text-align: center;
+  font-size: 2em;
+  font-weight: bold;
+  font-family: "Saira Condensed", sans-serif;
+  letter-spacing: 7px;
+  cursor: pointer;
+  text-shadow: 0 0 20px rgb(56, 78, 139), 0 0 20px #fff, 0 0 40px #fff;
+  letter-spacing: 1px;
+}
+.title {
+  font-size: 3em;
+}
+.m {
+  margin: 10px;
+}
+
+.motion {
+  position: "absolute";
+}
+
+.green {
+  color: chartreuse;
+  // text-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff, 0 0 42px #0fa,
+  //   0 0 82px green, 0 0 92px #0fa, 0 0 102px #0fa, 0 0 151px #0fa;
+}
+
+.time {
+  height: 94vh;
+}
+@media screen and (max-width: 625px) {
+  .tech {
+    height: 215vh;
+  }
+
+  .shining-text {
+    font-size: 1.5em;
+    letter-spacing: normal;
+  }
+  .title {
+    font-size: 2em;
+  }
+}

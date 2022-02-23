@@ -1,6 +1,6 @@
 import * as React from "react";
-import Timeline from '../src/Timeline';
+import Meet from '../src/Meet';
 
 export default function Index() {
-  return <Timeline />
+  return <Meet />
 }
