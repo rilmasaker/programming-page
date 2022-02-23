@@ -111,7 +111,7 @@ nav ul li > div {
 }
 
 .motion {
-  position: "absolute";
+  position: absolute;
 }
 
 .green {
@@ -124,8 +124,37 @@ nav ul li > div {
   height: 94vh;
 }
 @media screen and (max-width: 625px) {
+
+
+  @keyframes moveToDown {
+    0% {
+      transform: translateY(-1000px);
+
+    }
+    25% {
+      transform: translateY(-400px);
+    }
+    50% {
+      transform: translateY(-200px) ;
+
+    }
+
+    75% {
+      transform: translateY(-100px);
+ 
+    }
+    100% {
+      transform: translateY(0px);
+    }
+  }
   .tech {
     height: 215vh;
+  }
+
+  .motion {
+    position: absolute;
+    animation: moveToDown 5s linear;
+    animation-duration: 1000ms;
   }
 
   .shining-text {

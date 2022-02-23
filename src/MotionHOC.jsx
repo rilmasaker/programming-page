@@ -1,5 +1,6 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import { motion } from "framer-motion";
+import { isMobile } from "react-device-detect";
 
 const pageVariants = {
   initial: {
@@ -27,36 +28,32 @@ const pageTransition = {
 };
 
 const MotionHoc = (Component, className) => {
-  class AnimatedComponent extends React.Component {
-    static async getInitialProps(ctx) {
-      let isMobileView = (
-        ctx.req ? ctx.req.headers["user-agent"] : navigator.userAgent
-      ).match(
-        /Android|BlackBerry|iPhone|iPad|iPod|Opera Mini|IEMobile|WPDesktop/i
-      );
 
-      //Returning the isMobileView as a prop to the component for further use.
-      return {
-        isMobileView: Boolean(isMobileView),
-      };
-    }
-    render() {
-      return !this.props.isMobileView ? (
-        <motion.div
-          className={`motion ${className}`}
-          initial="initial"
-          animate="in"
-          exit="out"
-          variants={pageVariants}
-          transition={pageTransition}
-        >
-          <Component />
-        </motion.div>
-      ) : (
+
+  const AnimatedComponent = () => {
+    const [_isMobile, setMobile] = useState();
+
+    useEffect(() => {
+        setMobile(isMobile);
+    }, [setMobile]);
+    console.log(_isMobile);
+    return _isMobile ? (
+      <div className={`motion ${className}`}>
         <Component />
-      );
-    }
-  }
+      </div>
+    ) : (
+      <motion.div
+        className={`motion ${className}`}
+        initial="initial"
+        animate="in"
+        exit="out"
+        variants={pageVariants}
+        transition={pageTransition}
+      >
+        <Component />
+      </motion.div>
+    );
+  };
 
   return AnimatedComponent;
 };
