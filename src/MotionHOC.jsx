@@ -36,7 +36,6 @@ const MotionHoc = (Component, className) => {
     useEffect(() => {
         setMobile(isMobile);
     }, [setMobile]);
-    console.log(_isMobile);
     return _isMobile ? (
       <div className={`motion ${className}`}>
         <Component />
