@@ -1,7 +1,12 @@
-import * as React from "react";
+import { isMobile } from "react-device-detect";
+import React, { useEffect, useState } from "react";
 import MotionHoc from "./MotionHOC";
 
 const Technologies = () => {
+  const [_isMobile, setMobile] = useState();
+  useEffect(() => {
+    setMobile(isMobile);
+  }, [setMobile]);
   return (
     <div className="container">
       <div className="card">
@@ -10,7 +15,7 @@ const Technologies = () => {
             <h2 className="react">React</h2>
             <h4 className="react">
               is a free and open-source front-end JavaScript library for
-              building user interfaces based on UI components. I
+              building user interfaces based on UI components.
             </h4>
           </div>
         </div>
@@ -40,9 +45,10 @@ const Technologies = () => {
               HTML (the Hypertext Markup Language) and CSS (Cascading Style
               Sheets) are two of the core technologies for building Web pages.
               HTML provides the structure of the page, CSS the (visual and
-              aural) layout, for a variety of devices. Along with graphics and
-              scripting, HTML and CSS are the basis of building Web pages and
-              Web Applications
+              aural) layout, for a variety of devices.
+              {_isMobile
+                ? ""
+                : "Along with graphics and scripting, HTML and CSS are the basis of building Web pages and Web Applications"}
             </h4>
           </div>
         </div>

@@ -1,7 +1,10 @@
+import { useEffect, useState } from "react";
 import CastForEducationIcon from "@mui/icons-material/CastForEducation";
 import SupervisedUserCircleIcon from "@mui/icons-material/SupervisedUserCircle";
 import ModelTrainingIcon from "@mui/icons-material/ModelTraining";
 import MeetingRoomIcon from "@mui/icons-material/MeetingRoom";
+
+import { isMobile } from "react-device-detect";
 
 import Link from "next/link";
 
@@ -15,6 +18,10 @@ const links = [
 ];
 
 const SideBar = ({ children }) => {
+  const [_isMobile, setMobile] = useState();
+  useEffect(() => {
+    setMobile(isMobile);
+  }, [setMobile]);
   return (
     <>
       <div className="nav-container">
@@ -36,7 +43,7 @@ const SideBar = ({ children }) => {
           <div className="flex"> {children}</div>
         </div>
       </div>
-      <Background />
+      {_isMobile ? null : <Background />}
     </>
   );
 };

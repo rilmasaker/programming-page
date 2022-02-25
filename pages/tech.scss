@@ -107,7 +107,7 @@ body {
     }
 
     .card:nth-child(3) .face.face2 {
-      background-image: url("../public/html-css2.jpg");
+      background-image: url("../public/html-css.jpg");
       background-repeat: no-repeat;
       border-radius: 15px;
     }
@@ -115,18 +115,44 @@ body {
 }
 
 @media screen and (max-width: 625px) {
- body .container {
+  body .container {
     margin-top: 500px;
+  }
+
+  body .container {
+    .card {
+      width: 200px;
+      height: 300px;
+    }
+    .card:hover .face.face2 {
+      height: 30px;
+
+      h2 {
+        font-size: 1.5em;
+      }
+    }
+
+    .card:nth-child(1) .face.face2 {
+      background-image: url("../public/reactMobile.jpg");
+    }
+
+    .card:nth-child(2) .face.face2 {
+      background-image: url("../public/javascriptMobile.jpg");
+    }
+
+    .card:nth-child(3) .face.face2 {
+      background-image: url("../public/html-cssMobile.jpg");
+    }
   }
 }
 
 @media screen and (max-width: 350px) {
   body .container {
-     margin-top: 120vw;
-   }
- 
-   .m {
-     margin-top: 50vw;
-     font-size: smaller;
-   }
- }
+    margin-top: 160vw;
+  }
+
+  .m {
+    margin-top: 50vw;
+    font-size: smaller;
+  }
+}

@@ -1,6 +1,4 @@
-import React, {useState, useEffect} from "react";
 import { motion } from "framer-motion";
-import { isMobile } from "react-device-detect";
 
 const pageVariants = {
   initial: {
@@ -28,32 +26,18 @@ const pageTransition = {
 };
 
 const MotionHoc = (Component, className) => {
-
-
-  const AnimatedComponent = () => {
-    const [_isMobile, setMobile] = useState();
-
-    useEffect(() => {
-        setMobile(isMobile);
-    }, [setMobile]);
-    return _isMobile ? (
-      <div className={`motion ${className}`}>
-        <Component />
-      </div>
-    ) : (
-      <motion.div
-        className={`motion ${className}`}
-        initial="initial"
-        animate="in"
-        exit="out"
-        variants={pageVariants}
-        transition={pageTransition}
-      >
-        <Component />
-      </motion.div>
-    );
-  };
-
+  const AnimatedComponent = () => (
+    <motion.div
+      className={`motion ${className}`}
+      initial="initial"
+      animate="in"
+      exit="out"
+      variants={pageVariants}
+      transition={pageTransition}
+    >
+      <Component />
+    </motion.div>
+  );
   return AnimatedComponent;
 };
 
