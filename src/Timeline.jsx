@@ -5,6 +5,43 @@ import Image from "next/image";
 const Timeline = () => {
   return (
     <section id="cd-timeline" className="cd-container">
+            <div className="cd-timeline-block">
+        <div className="cd-timeline-img cd-movie"></div>
+
+        <div className="cd-timeline-content">
+          <div className="jobs">
+            <h2>Maandag</h2>
+            <Image src="/maandag.png" alt="Astek logo" width={100} height={25} />
+          </div>
+          <div className="timeline-content-info">
+            <span className="timeline-content-info-title">
+             Senior Frontend developer
+            </span>
+            <span className="timeline-content-info-date">
+              <i className="fa fa-calendar-o" aria-hidden="true"></i>
+              Jul 2022 - Jun 2024
+            </span>
+          </div>
+          <p>
+          Creating, implementing, and refactoring code for the software.
+            Assessing the complexity and impact of changes on the current or
+            planned system. Creating or selecting the most appropriate methods,
+            techniques, standards, tips, or tools for software development.
+            Testing alternative solutions and verifying their feasibility. In
+            addition to these responsibilities, I also played a key role in
+            maintaining the design system, ensuring consistency and efficiency
+            in the user interface across the application.
+          </p>
+          <ul className="content-skills">
+            <li>TypeScript</li>
+            <li>React </li>
+            <li>Next.js </li>
+            <li>REST</li>
+            <li>Contenfull</li>
+          </ul>
+          <span className="cd-date">JUl 22</span>
+        </div>
+      </div>
       <div className="cd-timeline-block">
         <div className="cd-timeline-img cd-movie"></div>
 

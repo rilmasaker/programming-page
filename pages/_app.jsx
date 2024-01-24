@@ -7,7 +7,7 @@ import SideBar from "../src/SideBar";
 import { AnimatePresence, motion } from "framer-motion";
 
 import "./styles.scss";
-import "./stars.scss";
+// import "./stars.scss";
 import "./timeline.scss";
 import "./tech.scss";
 
